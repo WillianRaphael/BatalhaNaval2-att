@@ -1,25 +1,38 @@
 package online;
 
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Cliente {
+public class Cliente extends Thread {
+    ServerSocket servidorSocket;
 
-    public static void main(String[] args) {
-        try {
+    public void realizarJogada(int linha, int coluna) throws IOException {
+        // Conecta-se ao servidor usando o endereço IP e a porta correta
+        String enderecoIP = "10.199.11.160";
+        int porta = 1234;
+        Socket clienteSocket = new Socket(enderecoIP, porta);
+        //Socket clienteSocket = servidorSocket.accept();
+        System.out.println("Conexão estabelecida com o servidor.");
+        // Aqui você pode iniciar o jogo e gerenciar a comunicação com o cliente
+        // Fecha os sockets
+        clienteSocket.close();
+    }
+    public void run() {
+       /* try {
             // Conecta-se ao servidor usando o endereço IP e a porta correta
-            String enderecoIP = "127.0.0.1";
+            String enderecoIP = "10.199.11.160";
             int porta = 1234;
             Socket clienteSocket = new Socket(enderecoIP, porta);
 
             System.out.println("Conexão estabelecida com o servidor.");
 
-            // Aqui você pode enviar e receber mensagens do servidor, participando do jogo
+
 
             // Fecha o socket
             clienteSocket.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace();*/
         }
     }
-}
+
