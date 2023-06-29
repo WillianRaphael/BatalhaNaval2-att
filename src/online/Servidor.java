@@ -15,7 +15,7 @@ public class Servidor extends Thread{
         // Aguarda a conexão do cliente
         Socket clienteSocket = servidorSocket.accept();
         System.out.println("Conexão estabelecida com o cliente.");
-        // Aqui você pode iniciar o jogo e gerenciar a comunicação com o cliente
+
         // Fecha os sockets
         clienteSocket.close();
     }

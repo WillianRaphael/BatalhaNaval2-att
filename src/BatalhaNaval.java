@@ -46,7 +46,7 @@ public class BatalhaNaval {
             System.out.print("Digite a coluna: ");
             int coluna = scanner.nextInt();
 
-            jogadorAtual.realizarJogada( jogador2, linha, coluna);
+            jogadorAtual.realizarJogada( jogador1, linha, coluna);
             s.realizarJogada(linha,coluna);
 
             jogadorAtual.realizarJogada( jogador2, linha, coluna);
