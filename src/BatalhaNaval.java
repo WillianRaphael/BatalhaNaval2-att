@@ -1,8 +1,7 @@
-import online.Cliente;
-import online.Servidor;
-
 import java.io.IOException;
 import java.util.Scanner;
+
+
 public class BatalhaNaval {
     public static void main(String[] args) throws IOException {
         Cliente c = new Cliente();
@@ -28,10 +27,8 @@ public class BatalhaNaval {
         Jogador jogadorAtual = jogador1;
         Jogador oponente = jogador2;
 
-        c.start();
-        s.start();
-
-        s.conectar();
+        c.realizarJogada(0, 0); // Exemplo de chamada de realizarJogada para o Cliente
+        s.conectar(); // Exemplo de chamada de conectar para o Servidor
 
         while (!jogoFinalizado) {
             System.out.println("\nTabuleiro do(a) " + jogadorAtual.getNome());
@@ -46,11 +43,8 @@ public class BatalhaNaval {
             System.out.print("Digite a coluna: ");
             int coluna = scanner.nextInt();
 
-            jogadorAtual.realizarJogada( jogador1, linha, coluna);
-            s.realizarJogada(linha,coluna);
-
-            jogadorAtual.realizarJogada( jogador2, linha, coluna);
-            c.realizarJogada(linha,coluna);
+            jogadorAtual.realizarJogada(jogador1, linha, coluna);
+            jogadorAtual.realizarJogada(jogador2, linha, coluna);
 
             if (oponente.todosNaviosDestruidos()) {
                 System.out.println("\nParabéns, " + jogadorAtual.getNome() + "! Você venceu o jogo.");
