@@ -24,7 +24,7 @@ class Servidor {
 
     }
 
-    private static class ClienteHandler implements Runnable {
+    public static class ClienteHandler implements Runnable {
         private final Socket clienteSocket;
 
         public ClienteHandler(Socket clienteSocket) {

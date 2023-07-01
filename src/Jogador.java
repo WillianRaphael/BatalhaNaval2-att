@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -131,13 +132,19 @@ class Jogador {
         return true;
     }
 
-    public void realizarJogada(Jogador oponente, int linha, int coluna) {
+    public void realizarJogada(Jogador oponente, int linha, int coluna) throws IOException {
         char marcador = oponente.getTabuleiroProprio().getMatriz()[linha][coluna];
         if (marcador == 'N') {
             marcador = '*';
         } else {
             marcador = '#';
         }
+        /**
+         * Codigo que envia a jogada para o servidor
+         */
+        Cliente c = new Cliente();
+        c.conectar();
+        c.enviarJogada(linha, coluna);
         tabuleiroOponente.marcarPosicao(linha, coluna, marcador);
     }
 }

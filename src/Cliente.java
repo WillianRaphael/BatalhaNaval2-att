@@ -3,18 +3,27 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Cliente {
-    private final String enderecoIP = "10.199.11.160";
-    private final int porta = 1234;
+    private Socket socket;
+    private DataOutputStream outputStream;
 
-    public void realizarJogada(int linha, int coluna) throws IOException {
-        Socket clienteSocket = new Socket(enderecoIP, porta);
-        System.out.println("Conexão estabelecida com o servidor.");
+    public void conectar() throws IOException {
+        // Estabelece a conexão com o servidor
+        socket = new Socket("10.199.11.65", 1234);
 
-        DataOutputStream outputStream = new DataOutputStream(clienteSocket.getOutputStream());
-        outputStream.writeInt(linha);
-        outputStream.writeInt(coluna);
-
-        outputStream.close();
-        clienteSocket.close();
+        // Cria o stream de saída para enviar dados ao servidor
+        outputStream = new DataOutputStream(socket.getOutputStream());
     }
+
+    public void enviarJogada(int linha, int coluna) {
+        try {
+            // Envia as coordenadas da jogada ao servidor
+            outputStream.writeInt(linha);
+            outputStream.writeInt(coluna);
+        } catch (IOException e) {
+            System.out.println("Erro ao enviar jogada para o servidor: " + e.getMessage());
+        }
+    }
+
+    // Outros métodos da classe Cliente (se houver)...
 }
+

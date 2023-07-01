@@ -27,8 +27,7 @@ public class BatalhaNaval {
         Jogador jogadorAtual = jogador1;
         Jogador oponente = jogador2;
 
-        c.realizarJogada(0, 0); // Exemplo de chamada de realizarJogada para o Cliente
-        s.conectar(); // Exemplo de chamada de conectar para o Servidor
+        s.conectar();
 
         while (!jogoFinalizado) {
             System.out.println("\nTabuleiro do(a) " + jogadorAtual.getNome());
