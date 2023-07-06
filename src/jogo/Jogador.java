@@ -1,3 +1,7 @@
+package jogo;
+
+import online.Cliente;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -149,7 +153,7 @@ class Jogador {
         } else {
             marcador = '#';
         }
-        /**
+        /*
          * Codigo que envia a jogada para o servidor
          */
         Cliente c = new Cliente();
@@ -158,54 +162,3 @@ class Jogador {
         tabuleiroOponente.marcarPosicao(linha, coluna, marcador);
     }
 }
-/*
-public class BatalhaNaval {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Digite o nome do Jogador 1: ");
-        String nomeJogador1 = scanner.next();
-        Jogador jogador1 = new Jogador(nomeJogador1);
-
-        System.out.print("Digite o nome do Jogador 2: ");
-        String nomeJogador2 = scanner.next();
-        Jogador jogador2 = new Jogador(nomeJogador2);
-
-        System.out.println("Jogador 1, posicione seus navios:");
-        jogador1.posicionarNavios();
-
-        System.out.println("Jogador 2, posicione seus navios:");
-        jogador2.posicionarNavios();
-
-        boolean jogoFinalizado = false;
-        Jogador jogadorAtual = jogador1;
-        Jogador oponente = jogador2;
-
-        while (!jogoFinalizado) {
-            System.out.println("\nTabuleiro do(a) " + jogadorAtual.getNome());
-            jogadorAtual.getTabuleiroProprio().exibir();
-
-            System.out.println("\nTabuleiro do(a) " + jogadorAtual.getNome() + " (Oponente)");
-            jogadorAtual.getTabuleiroOponente().exibir();
-
-            System.out.println("\nJogador " + jogadorAtual.getNome() + ", faça sua jogada.");
-            System.out.print("Digite a linha: ");
-            int linha = scanner.nextInt();
-            System.out.print("Digite a coluna: ");
-            int coluna = scanner.nextInt();
-
-            jogadorAtual.realizarJogada(oponente, linha, coluna);
-
-            if (oponente.todosNaviosDestruidos()) {
-                System.out.println("\nParabéns, " + jogadorAtual.getNome() + "! Você venceu o jogo.");
-                jogoFinalizado = true;
-            } else {
-                Jogador temp = jogadorAtual;
-                jogadorAtual = oponente;
-                oponente = temp;
-            }
-        }
-
-        scanner.close();
-    }
-}*/

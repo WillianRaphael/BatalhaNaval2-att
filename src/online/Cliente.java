@@ -1,3 +1,5 @@
+package online;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -24,6 +26,6 @@ public class Cliente {
         }
     }
 
-    // Outros métodos da classe Cliente
+    // Outros métodos da classe online.Cliente
 }
 

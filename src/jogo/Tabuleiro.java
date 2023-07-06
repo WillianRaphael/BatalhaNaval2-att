@@ -1,3 +1,5 @@
+package jogo;
+
 class Tabuleiro {
     private char[][] matriz;
 

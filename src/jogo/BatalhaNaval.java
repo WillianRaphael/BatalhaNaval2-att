@@ -1,3 +1,8 @@
+package jogo;
+
+import online.Cliente;
+import online.Servidor;
+
 import java.io.IOException;
 import java.util.Scanner;
 

@@ -1,9 +1,12 @@
+package online;
+
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-class Servidor {
+public class Servidor {
     private ServerSocket servidorSocket;
 
     public void conectar() throws IOException {
@@ -20,8 +23,8 @@ class Servidor {
         }
     }
 
-    public void realizarJogada(int linha, int coluna) throws IOException {
-
+    public void desconectar() throws IOException {
+        servidorSocket.close();
     }
 
     public static class ClienteHandler implements Runnable {
@@ -38,7 +41,7 @@ class Servidor {
                 int linha = inputStream.readInt();
                 int coluna = inputStream.readInt();
 
-
+                // Aqui você pode chamar o método realizarJogada() do jogador correspondente
 
                 inputStream.close();
                 clienteSocket.close();
