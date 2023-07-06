@@ -8,7 +8,7 @@ public class Cliente {
 
     public void conectar() throws IOException {
         // Estabelece a conexão com o servidor
-        socket = new Socket("10.199.11.65", 1234);
+        socket = new Socket("192.168.15.170", 1234);
 
         // Cria o stream de saída para enviar dados ao servidor
         outputStream = new DataOutputStream(socket.getOutputStream());
@@ -24,6 +24,6 @@ public class Cliente {
         }
     }
 
-    // Outros métodos da classe Cliente (se houver)...
+    // Outros métodos da classe Cliente
 }
 

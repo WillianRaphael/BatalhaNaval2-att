@@ -3,9 +3,15 @@ import java.util.Scanner;
 
 
 public class BatalhaNaval {
+
+
     public static void main(String[] args) throws IOException {
         Cliente c = new Cliente();
         Servidor s = new Servidor();
+
+
+        s.conectar();
+        c.conectar();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -27,7 +33,7 @@ public class BatalhaNaval {
         Jogador jogadorAtual = jogador1;
         Jogador oponente = jogador2;
 
-        s.conectar();
+
 
         while (!jogoFinalizado) {
             System.out.println("\nTabuleiro do(a) " + jogadorAtual.getNome());

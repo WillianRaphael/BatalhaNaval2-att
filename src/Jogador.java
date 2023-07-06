@@ -99,7 +99,12 @@ class Jogador {
 
             // Verifica alinhamento horizontal
             for (int i = 1; i < tamanho; i++) {
-                if (tabuleiroProprio.getMatriz()[linha][coluna + i] != '-') {
+                if (linha >= 0 && linha < 10 && coluna + i >= 0 && coluna + i < 10) {
+                    if (tabuleiroProprio.getMatriz()[linha][coluna + i] != '-') {
+                        alinhadoHorizontalmente = false;
+                        break;
+                    }
+                } else {
                     alinhadoHorizontalmente = false;
                     break;
                 }
@@ -107,7 +112,12 @@ class Jogador {
 
             // Verifica alinhamento vertical
             for (int i = 1; i < tamanho; i++) {
-                if (tabuleiroProprio.getMatriz()[linha + i][coluna] != '-') {
+                if (linha + i >= 0 && linha + i < 10 && coluna >= 0 && coluna < 10) {
+                    if (tabuleiroProprio.getMatriz()[linha + i][coluna] != '-') {
+                        alinhadoVerticalmente = false;
+                        break;
+                    }
+                } else {
                     alinhadoVerticalmente = false;
                     break;
                 }
